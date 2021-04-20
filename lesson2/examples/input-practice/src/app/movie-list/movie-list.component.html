@@ -4,5 +4,6 @@
        <li *ngFor ="let movie of movies">{{movie}}</li>
     </ol>
     <hr>
-
- </div>
+<input #newM (keyup.enter)="newMovie(newM.value); newM.value=''"  type="text" placeholder="Enter new movie"/>
+<button (click)="newMovie(newM.value); newM.value=''">add</button>
+</div>
