@@ -15,9 +15,17 @@ export class MovieListComponent implements OnInit {
 
    newMovie(newmovie:string)
    {
-      if(!this.movies.includes(newmovie))
+      let err='';
+      if(newmovie === '')
       {
-      this.movies.push(newmovie);
+         err="movie title should not be blank";
+      }
+      else if(this.movies.includes(newmovie))
+      {
+         err="movie allready in list";
+      }
+      else{
+         this.movies.push(newmovie);
       }
       
    }
